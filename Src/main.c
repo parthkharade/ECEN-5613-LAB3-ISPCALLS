@@ -65,7 +65,7 @@ __code unsigned char __at (CODE_LOC+32) pname[] = "ISP-CALLS";
 			printf_tiny("\r\n |----------------------------------|");
 			printf_tiny("\r\n |   F.  | Read Boot_V              |");
 			printf_tiny("\r\n |----------------------------------|");
-			printf_tiny("\r\n |   G.  | Prog Data Mem (0x6000)   |");														
+			printf_tiny("\r\n |   G.  | Prog Data Mem (0x6F00)   |");														
 			printf_tiny("\r\n ------------------------------------");
 			break;
 		case 'A':{
@@ -141,7 +141,7 @@ __code unsigned char __at (CODE_LOC+32) pname[] = "ISP-CALLS";
 			break;
 		}
 		case 'G':{
-			printf_tiny("Enter the value to be written to 0x6000 :");
+			printf_tiny("Enter the value to be written to 0x6F00 :");
 			uint16_t data_byte = 0;
 			scan_num(&data_byte);
 			ACC = (uint8_t)(data_byte&0xFF);
@@ -149,7 +149,7 @@ __code unsigned char __at (CODE_LOC+32) pname[] = "ISP-CALLS";
 			__asm
 				mov r1, #0x02
 				mov dpl, #0x00
-				mov dph, #0x60
+				mov dph, #0x6F
 				lcall #PGM_MTP				
 			__endasm;
 			AUXR1&=0xDF;
