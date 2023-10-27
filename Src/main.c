@@ -1,3 +1,15 @@
+/**
+ * @file main.c
+ * @author Parth Kharade (you@domain.com)
+ * @brief 	Short program to illustrate functioning of inbuilt API in the Atmel AT89c51 microcontroller
+ * @version 0.1
+ * @date 2023-10-27
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
+
+
 #include "stdio.h"
 #include "stdint.h"
 #include "at89c51ed2.h"
